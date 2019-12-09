@@ -11,11 +11,7 @@ import UIKit
 
 struct TextView: UIViewRepresentable {
     
-    // MARK: - Properties
-    
     @Binding var text: String
-    
-    // MARK: - UIViewRepresentable
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -30,8 +26,6 @@ struct TextView: UIViewRepresentable {
     func updateUIView(_ textView: UITextView, context: UIViewRepresentableContext<TextView>) {
         textView.text = text
     }
-    
-    // MARK: - Coordinator
     
     class Coordinator: NSObject, UITextViewDelegate {
         
